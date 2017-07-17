@@ -1,0 +1,30 @@
+{
+
+  "description": "Copy and Paste Data",
+  "manifest_version": 2,
+  "name": "Copy , Paste",
+  "version": "2.0",  
+  "icons": {
+    "32": "icons/icon-32.png"
+  },
+
+  "permissions": [
+    "activeTab",
+    "clipboardRead",
+    "clipboardWrite",
+    "storage"    
+  ],  
+
+  "browser_action": {
+    "default_icon":  "icons/beasts-32.png",
+    "default_title": "Copy Data",
+    "default_popup": "main/index.html"
+  }  ,
+  "content_scripts": [
+  {
+    "matches": ["file://*/*","*://*/*"],
+    "js": ["content_scripts/jquery-3.2.1.min.js", "content_scripts/jquery.inputmask.bundle.js", "content_scripts/common.js"]
+  }
+]
+
+}
